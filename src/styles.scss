@@ -1,1 +1,320 @@
-/* You can add global styles to this file, and also import other style files */
+$primario: #5E311E;
+$secundario: #C39C63;
+$negro: #000000;
+$blanco: #FFFFFF;
+$grisClaro: #eceeef;
+$cafeClaro: #ebe7de;
+$separacion: 5rem;
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*,*:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-size: 1.6rem;
+    background-color: $cafeClaro;
+}
+p {
+    color: $negro;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+.contenedor {
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: $negro;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+h1, h2, h3 {
+  
+  margin: 0 0 $separacion 0;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.5;
+}
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 3.6rem;
+  color: $primario;
+
+  span {
+       color: $secundario;
+       font-size: 1.8rem;
+       display: block;
+  }
+
+  &::after {
+      content: '';
+      display: block;
+      width: 10rem;
+      height: 10rem;
+      margin: 0 auto;
+      background-image: url('./assets/img/cafe.svg');
+      background-size: 10rem;
+  }
+}
+
+.heading-blanco {
+  @extend h2;
+  color: $blanco;
+
+  span {
+      color: $blanco;
+  }
+  &::after {
+      display: none;
+  }
+}
+
+h3 {
+  font-size: 3.2rem;
+}
+
+
+
+ html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%; 
+  }
+  
+ 
+  
+  body {
+    margin: 0;
+  }
+  
+
+  main {
+    display: block;
+  }
+  
+
+  h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+  }
+  
+ 
+  
+  hr {
+    box-sizing: content-box; /* 1 */
+    height: 0; /* 1 */
+    overflow: visible; /* 2 */
+  }
+ 
+  pre {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
+  
+ 
+  a {
+    background-color: transparent;
+  }
+  
+  
+  abbr[title] {
+    border-bottom: none; /* 1 */
+    text-decoration: underline; /* 2 */
+    text-decoration: underline dotted; /* 2 */
+  }
+  
+  
+  b,
+  strong {
+    font-weight: bolder;
+  }
+  
+
+  
+  code,
+  kbd,
+  samp {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
+  
+ 
+  
+  small {
+    font-size: 80%;
+  }
+  
+ 
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  
+  sub {
+    bottom: -0.25em;
+  }
+  
+  sup {
+    top: -0.5em;
+  }
+  
+
+  img {
+    border-style: none;
+  }
+  
+
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 1 */
+    line-height: 1.15; /* 1 */
+    margin: 0; /* 2 */
+  }
+  
+
+  button,
+  input { /* 1 */
+    overflow: visible;
+  }
+  
+
+  
+  button,
+  select { /* 1 */
+    text-transform: none;
+  }
+  
+
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"] {
+    -webkit-appearance: button;
+  }
+  
+ 
+  button::-moz-focus-inner,
+  [type="button"]::-moz-focus-inner,
+  [type="reset"]::-moz-focus-inner,
+  [type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+  
+
+  
+  button:-moz-focusring,
+  [type="button"]:-moz-focusring,
+  [type="reset"]:-moz-focusring,
+  [type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
+  
+
+  
+  fieldset {
+    padding: 0.35em 0.75em 0.625em;
+  }
+  
+
+  legend {
+    box-sizing: border-box; 
+    color: inherit; 
+    display: table; 
+    max-width: 100%; 
+    padding: 0; 
+    white-space: normal; 
+  }
+  
+
+  progress {
+    vertical-align: baseline;
+  }
+  
+
+  textarea {
+    overflow: auto;
+  }
+  
+
+  
+  [type="checkbox"],
+  [type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+  }
+  
+ 
+  
+  [type="number"]::-webkit-inner-spin-button,
+  [type="number"]::-webkit-outer-spin-button {
+    height: auto;
+  }
+  
+
+  [type="search"] {
+    -webkit-appearance: textfield; 
+    outline-offset: -2px; 
+  }
+  
+ 
+  [type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  
+
+  
+  ::-webkit-file-upload-button {
+    -webkit-appearance: button; /* 1 */
+    font: inherit; /* 2 */
+  }
+  
+ 
+  /*
+   * Add the correct display in Edge, IE 10+, and Firefox.
+   */
+  
+  details {
+    display: block;
+  }
+  
+  /*
+   * Add the correct display in all browsers.
+   */
+  
+  summary {
+    display: list-item;
+  }
+  
+ 
+  template {
+    display: none;
+  }
+  
+
+  [hidden] {
+    display: none;
+  }

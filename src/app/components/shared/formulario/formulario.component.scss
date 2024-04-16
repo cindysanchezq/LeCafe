@@ -1,0 +1,75 @@
+// Colores
+$primario: #5E311E;
+$secundario: #C39C63;
+$negro: #000000;
+$blanco: #FFFFFF;
+$grisClaro: #eceeef;
+$cafeClaro: #ebe7de;
+
+.contenedor {
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.contenido-principal {
+    background-color: $blanco;
+    padding: 5rem 2rem;
+
+    @media (min-width: 768px) {
+        padding: 10rem;
+        margin-top: -10rem;
+        position: relative;
+    }
+
+}
+.contenido-contacto {
+    @media (min-width: 768px) { 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        
+        background-image: url(../../../../assets/img/granos_cafe.jpg);
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: 40%;
+    }
+}
+
+.formulario {
+    .campo {
+        margin-bottom: 2rem;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        label {
+            text-transform: uppercase;
+            display: block;
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        input:not([type="submit"]), 
+        select {
+            width: 100%;
+            padding: 1rem;
+            border: .5rem solid $primario;
+        }
+
+        input[type="submit"] {
+            background-color: $primario;
+            width: 100%;
+            border: none;
+            padding: 1rem;
+            color: $blanco;
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}

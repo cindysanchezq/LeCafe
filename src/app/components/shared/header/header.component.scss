@@ -1,0 +1,122 @@
+//Variables
+$primario: #5E311E;
+$secundario: #C39C63;
+$negro: #000000;
+$blanco: #FFFFFF;
+$grisClaro: #eceeef;
+$cafeClaro: #ebe7de;
+
+// Header
+.header {
+    padding: 5rem 0;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media (min-width: 768px){
+        min-height: 70rem;
+    }
+  
+    &::before {
+        content: '';
+        background-color: $negro;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: .6;
+    }
+
+    .contenido-header {
+       position: relative;
+
+       h1 {
+           text-align: center;
+           color: $blanco;
+           text-transform: uppercase;
+           margin-top: 5rem;
+           @media (min-width: 768px) {
+            margin-top: 10rem;
+        }
+       }
+    }
+
+}
+
+.sesion{
+    display: flex;
+    justify-content: flex-end;
+    @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .carrito{
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    
+
+
+}
+//Barra
+
+.barra {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        width: 40%;
+        margin: 0 auto;
+        img{
+    
+            border-radius: 50%;
+        }
+
+        @media (min-width: 768px) {
+            width: 15rem;
+            margin: 0;
+        }
+    }
+}
+
+
+.nav-principal {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+  
+    @media (min-width: 768px) {
+        flex-direction: row;
+        gap: 1rem;
+        margin-top: 0;
+    }
+
+    a {
+        text-align: center;
+        color: $blanco;
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        
+        @media (min-width: 768px) {
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            color: $secundario;
+        }
+
+        &.activo {
+            color: $secundario;
+        }
+    }
+}
