@@ -7,6 +7,7 @@ import { ResenasComponent } from './pages/resenas/resenas.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import { DashboardAdminComponent } from './pages/dashboard-admin/dashboard-admin.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,11 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterPageComponent
+  },
+
+  {
+    path:'admin',
+    component:DashboardAdminComponent
   },
 
 

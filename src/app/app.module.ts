@@ -20,6 +20,10 @@ import { LoginComponent } from './components/shared/login/login.component';
 import { RegisterComponent } from './components/shared/register/register.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import { DashboardAdminComponent } from './pages/dashboard-admin/dashboard-admin.component';
+import { DashComponent } from './components/shared/dash/dash.component';
+import { EditAdminComponent } from './components/shared/edit-admin/edit-admin.component';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +43,9 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
     LoginComponent,
     RegisterComponent,
     LoginPageComponent,
-    RegisterPageComponent
+    RegisterPageComponent,
+    DashboardAdminComponent,
+    DashComponent,
   ],
   imports: [
     BrowserModule,
