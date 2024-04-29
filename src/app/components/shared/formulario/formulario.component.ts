@@ -1,4 +1,6 @@
+import { compileNgModule } from '@angular/compiler';
 import { Component } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-formulario',
@@ -7,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class FormularioComponent {
 
+  submit(event:any){
+    event.preventDefault();
+    Swal.fire("Reserva Enviada");
+  }
 }

@@ -2,7 +2,7 @@
     <h2><span>Reserva tu</span>Mesa</h2>
 
     <div class="contenido-contacto">
-        <form class="formulario">
+        <form class="formulario" >
             <div class="campo">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" placeholder="Tu Nombre">
@@ -33,7 +33,7 @@
                 <input type="date" id="fecha">
             </div>
             <div class="campo">
-                <input type="submit" value="Enviar">
+                <input type="button" (click)="submit($event)" value="Enviar">
             </div>
         </form>
     </div>

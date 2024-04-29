@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-catalogo',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./catalogo.component.scss']
 })
 export class CatalogoComponent {
+
+  submit(event:any){
+    event.preventDefault();
+    Swal.fire("Producto Agregado");
+  }
 
 }

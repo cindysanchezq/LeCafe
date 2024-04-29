@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { NosotrosComponent } from './pages/nosotros/nosotros.component';
@@ -8,6 +8,11 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { DashboardAdminComponent } from './pages/dashboard-admin/dashboard-admin.component';
+import { EditarComponent } from './pages/editar/editar.component';
+import { ComponentFixture } from '@angular/core/testing';
+import { CrearProductoComponent } from './pages/crear-producto/crear-producto.component';
+
+
 
 const routes: Routes = [
   {
@@ -45,8 +50,15 @@ const routes: Routes = [
     path:'admin',
     component:DashboardAdminComponent
   },
-
-
+  {
+    path:'editar',
+    component:EditarComponent
+  },
+  {
+    path:'crear',
+    component:CrearProductoComponent
+  },
+  
   {
     path: '**',
     redirectTo: 'home'

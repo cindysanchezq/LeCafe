@@ -2,8 +2,8 @@
     <div class="contenido-header contenedor">
         
         <div class="barra">
-            <button type="button" class="btn btn-lg btn-outline-light me-3 boton1"  routerLink="/login" >Crear Producto</button>
-            <button type="button" class="btn btn-link boton2" routerLink="/register">Salir</button>
+            <button type="button" class="btn btn-lg btn-outline-light me-3 boton1"  routerLink="/crear" >Crear Producto</button>
+            <button type="button" class="btn btn-link boton2" routerLink="/Home">Salir</button>
         
         </div>   
     </div>
@@ -11,9 +11,6 @@
 
 
 <main class="contenedor contenido-principal text-center">
-
-   
-   
     <div class="listado-productos">
         <div class="producto">
             <img loading="lazy" decoding="async"  src="../../../../assets/img/productos/producto_1.jpeg" alt="Imagen producto">
@@ -26,7 +23,7 @@
             </div>
             <div class="botones">
                 <button class="editar" routerLink="/editar">Editar</button>
-                <button class="borrar">Borrar</button>
+                <button class="borrar" (click)="submit($event)" >Borrar</button>
             </div>
         </div>
 
@@ -40,7 +37,7 @@
             </div>
             <div class="botones">
                 <button class="editar" routerLink="/editar">Editar</button>
-                <button class="borrar">Borrar</button>
+                <button class="borrar" (click)="submit($event)" >Borrar</button>
             </div>
         </div>
 
@@ -54,7 +51,7 @@
             </div>
             <div class="botones">
                 <button class="editar" routerLink="/editar">Editar</button>
-                <button class="borrar">Borrar</button>
+                <button class="borrar" (click)="submit($event)" >Borrar</button>
             </div>
         </div>
 
@@ -68,7 +65,7 @@
             </div>
             <div class="botones">
                 <button class="editar" routerLink="/editar">Editar</button>
-                <button class="borrar">Borrar</button>
+                <button class="borrar" (click)="submit($event)" >Borrar</button>
             </div>
         </div>
         <div class="producto">
@@ -81,7 +78,7 @@
             </div>
             <div class="botones">
                 <button class="editar" routerLink="/editar">Editar</button>
-                <button class="borrar">Borrar</button>
+                <button class="borrar" (click)="submit($event)" >Borrar</button>
             </div>
         </div>
         <div class="producto">
@@ -94,6 +91,9 @@
             </div>
             <div class="botones">
                 <button class="editar" routerLink="/editar">Editar</button>
-                <button class="borrar">Borrar</button>
+                <button class="borrar" (click)="submit($event)" >Borrar</button>
             </div>
         </div>
+    </div>
+
+</main>

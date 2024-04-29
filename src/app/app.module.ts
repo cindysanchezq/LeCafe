@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/shared/header/header.component';
@@ -22,7 +21,11 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { DashboardAdminComponent } from './pages/dashboard-admin/dashboard-admin.component';
 import { DashComponent } from './components/shared/dash/dash.component';
-import { EditAdminComponent } from './components/shared/edit-admin/edit-admin.component';
+import { EditarComponent } from './pages/editar/editar.component';
+import { EditarAdminComponent } from './components/shared/editar-admin/editar-admin.component';
+import { NewProductComponent } from './components/shared/new-product/new-product.component';
+import { CrearProductoComponent } from './pages/crear-producto/crear-producto.component';
+
 
 
 @NgModule({
@@ -46,6 +49,10 @@ import { EditAdminComponent } from './components/shared/edit-admin/edit-admin.co
     RegisterPageComponent,
     DashboardAdminComponent,
     DashComponent,
+    EditarComponent,
+    EditarAdminComponent,
+    NewProductComponent,
+    CrearProductoComponent,
   ],
   imports: [
     BrowserModule,
