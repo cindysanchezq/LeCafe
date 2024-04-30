@@ -25,6 +25,8 @@ import { EditarComponent } from './pages/editar/editar.component';
 import { EditarAdminComponent } from './components/shared/editar-admin/editar-admin.component';
 import { NewProductComponent } from './components/shared/new-product/new-product.component';
 import { CrearProductoComponent } from './pages/crear-producto/crear-producto.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PrecioFormatPipe } from './pipes/precio.pipe';
 
 
 
@@ -53,9 +55,11 @@ import { CrearProductoComponent } from './pages/crear-producto/crear-producto.co
     EditarAdminComponent,
     NewProductComponent,
     CrearProductoComponent,
+    PrecioFormatPipe
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     RouterModule
   ],

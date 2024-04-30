@@ -11,64 +11,73 @@ import { DashboardAdminComponent } from './pages/dashboard-admin/dashboard-admin
 import { EditarComponent } from './pages/editar/editar.component';
 import { ComponentFixture } from '@angular/core/testing';
 import { CrearProductoComponent } from './pages/crear-producto/crear-producto.component';
-
-
+import { AdminGuard } from './guards/admin.guard';
+import { LoginGuard } from './guards/login.guard';
+import { PublicGuard } from './guards/public.guard';
 
 const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    canActivate: [PublicGuard],
   },
   {
     path: 'nosotros',
-    component: NosotrosComponent
+    component: NosotrosComponent,
+    canActivate: [PublicGuard],
   },
 
   {
     path: 'productos',
-    component: ProductosComponent
+    component: ProductosComponent,
+    canActivate: [PublicGuard],
   },
   {
     path: 'resenas',
-    component: ResenasComponent
+    component: ResenasComponent,
+    canActivate: [PublicGuard],
   },
 
   {
     path: 'contacto',
-    component: ContactoComponent
+    component: ContactoComponent,
+    canActivate: [PublicGuard],
   },
   {
     path: 'login',
-    component: LoginPageComponent
+    component: LoginPageComponent,
+    canActivate: [LoginGuard],
   },
   {
     path: 'register',
-    component: RegisterPageComponent
+    component: RegisterPageComponent,
+    canActivate: [LoginGuard],
   },
 
   {
-    path:'admin',
-    component:DashboardAdminComponent
+    path: 'admin',
+    component: DashboardAdminComponent,
+    canActivate: [AdminGuard],
   },
   {
-    path:'editar',
-    component:EditarComponent
+    path: 'editar/:id',
+    component: EditarComponent,
+    canActivate: [AdminGuard],
   },
   {
-    path:'crear',
-    component:CrearProductoComponent
+    path: 'crear',
+    component: CrearProductoComponent,
+    canActivate: [AdminGuard],
   },
-  
+
   {
     path: '**',
-    redirectTo: 'home'
-  }
-
-
+    redirectTo: 'home',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

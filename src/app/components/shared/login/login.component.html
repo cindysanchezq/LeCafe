@@ -1,8 +1,7 @@
-
-<div class="container-login img js-fullheight " style="background-image: url(assets/img/header_login.jpg);">
+<div class="container-login img js-fullheight" style="background-image: url(assets/img/header_login.jpg);">
     <section class="container ftco-section">
-        <div class="barra ml-5">              
-            <nav class="nav-principal ">
+        <div class="barra ml-5">
+            <nav class="nav-principal">
                 <a routerLink="/home" routerLinkActive="activo">Inicio</a>
             </nav>
         </div>
@@ -10,30 +9,29 @@
         <div class="container login-container">
             <div class="row justify-content-center">
                 <div class="col-md-6 text-center mb-5">
-                    <h3 class="heading-section">Iniciar Sesión </h3>
+                    <h3 class="heading-section">Iniciar Sesión</h3>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4">
                     <div class="login-wrap p-0">
-                     
-                        <form action="#" class="signin-form">
+                        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="signin-form">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Nombre de Usuario" required>
+                                <input type="email" class="form-control" placeholder="Correo Electrónico"
+                                    formControlName="email">
                             </div>
                             <div class="form-group">
                                 <input id="password-field" type="password" class="form-control" placeholder="Contraseña"
-                                    required>
-                                <span toggle="#password-field"
-                                    class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                    formControlName="password">
+                                <span class="fa fa-fw fa-eye field-icon toggle-password"></span>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="form-control btn btn-primary submit px-3">Ingresar</button>
                             </div>
                             <div class="form-group d-md-flex">
-            
+
                                 <div class="w-50 text-md-right">
-                                    <a href="#" style="color: #fff">Olvide mi Contraseña</a>
+                                    <a href="#" style="color: #fff">Olvidé mi Contraseña</a>
                                 </div>
                             </div>
                         </form>

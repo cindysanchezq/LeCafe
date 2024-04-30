@@ -1,8 +1,7 @@
-
-<div class="container-login img js-fullheight " style="background-image: url(assets/img/header_register.jpg);">
+<div class="container-login img js-fullheight" style="background-image: url(assets/img/header_register.jpg);">
     <section class="container ftco-section">
-        <div class="barra ml-5">              
-            <nav class="nav-principal ">
+        <div class="barra ml-5">
+            <nav class="nav-principal">
                 <a routerLink="/home" routerLinkActive="activo">Inicio</a>
             </nav>
         </div>
@@ -10,30 +9,28 @@
         <div class="container login-container">
             <div class="row justify-content-center">
                 <div class="col-md-6 text-center mb-5">
-                    <h3 class="heading-section">Registrate </h3>
+                    <h3 class="heading-section">Registrate</h3>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4">
                     <div class="login-wrap p-0">
-                     
-                        <form action="#" class="signin-form">
+                        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="signin-form">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Nombre y apellidos" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Nombre de Usuario" required>
+                                <input type="text" class="form-control" placeholder="Email"
+                                    formControlName="username" required>
                             </div>
                             <div class="form-group">
                                 <input id="password-field" type="password" class="form-control" placeholder="Contraseña"
-                                    required>
+                                    formControlName="password" required>
                             </div>
                             <div class="form-group">
-                                <input id="password2-field" type="password" class="form-control" placeholder="Repetir Contraseña"
-                                    required>
+                                <input id="password2-field" type="password" class="form-control"
+                                    placeholder="Repetir Contraseña" formControlName="confirmPassword" required>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="form-control btn btn-primary submit px-3">Crear Cuenta</button>
+                                <button type="submit" class="form-control btn btn-primary submit px-3">Crear
+                                    Cuenta</button>
                             </div>
                         </form>
                     </div>

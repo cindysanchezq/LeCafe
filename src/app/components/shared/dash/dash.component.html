@@ -1,99 +1,44 @@
-<header class="header header-inicio " >
-    <div class="contenido-header contenedor">
-        
-        <div class="barra">
-            <button type="button" class="btn btn-lg btn-outline-light me-3 boton1"  routerLink="/crear" >Crear Producto</button>
-            <button type="button" class="btn btn-link boton2" routerLink="/Home">Salir</button>
-        
-        </div>   
+<header class="header header-inicio">
+  <div class="contenido-header contenedor">
+    <div class="barra">
+      <button
+        type="button"
+        class="btn btn-lg btn-outline-light me-3 boton1"
+        routerLink="/crear"
+      >
+        Crear Producto
+      </button>
+      <button type="button" class="btn btn-link boton2" (click)="logout()">
+        Salir
+      </button>
     </div>
+  </div>
 </header>
 
-
 <main class="contenedor contenido-principal text-center">
-    <div class="listado-productos">
-        <div class="producto">
-            <img loading="lazy" decoding="async"  src="../../../../assets/img/productos/producto_1.jpeg" alt="Imagen producto">
-            <div class="texto-producto">
-                <h3>capuccino</h3>
-                <p>Sumérgete en el placer de nuestro cappuccino: una mezcla perfecta de café, espuma de leche y dulzura. Una experiencia que deleitará 
-                    tus sentidos y te transportará a Italia en cada sorbo. </p>
-                    <p class="precio">$10.000 <span class="fs-1">cop</span></p>
-                    
-            </div>
-            <div class="botones">
-                <button class="editar" routerLink="/editar">Editar</button>
-                <button class="borrar" (click)="submit($event)" >Borrar</button>
-            </div>
-        </div>
-
-        <div class="producto">
-            <img loading="lazy" decoding="async" src="../../../../assets/img/productos/producto_2.jpg" alt="Imagen producto">
-            <div class="texto-producto">
-                <h3>    avocado toast</h3>
-                <p>Disfruta de nuestras tostadas sin gluten con aguacate y tomate: una combinación deliciosa y saludable 
-                    que te hará sentir bien. Sabores frescos y texturas crujientes en cada bocado.</p>
-                    <p class="precio">$25.000 <span class="fs-1">cop</span> </p>
-            </div>
-            <div class="botones">
-                <button class="editar" routerLink="/editar">Editar</button>
-                <button class="borrar" (click)="submit($event)" >Borrar</button>
-            </div>
-        </div>
-
-        <div class="producto">
-            <img loading="lazy" decoding="async" src="../../../../assets/img/productos/producto_3.jpg" alt="Imagen producto">
-            <div class="texto-producto">
-                <h3>Cafe frio latte</h3>
-                <p>Nuestro Café Frío Latte combina café espresso suave, leche fresca y un toque dulce, todo sobre hielo.
-                     La elección perfecta para los amantes del café en busca de una nueva experiencia.</p>
-                    <p class="precio">$18.000 <span class="fs-1">cop</span></p>
-            </div>
-            <div class="botones">
-                <button class="editar" routerLink="/editar">Editar</button>
-                <button class="borrar" (click)="submit($event)" >Borrar</button>
-            </div>
-        </div>
-
-        <div class="producto">
-            <img loading="lazy" decoding="async" src="../../../../assets/img/productos/producto_4.jpg" alt="Imagen producto">
-            <div class="texto-producto">
-                <h3>Crepas Miel</h3>
-                <p>Disfruta de nuestras crepas con miel de maple: suaves crepas rellenas y cubiertas con la dulzura natural y 
-                    el aroma tentador de la miel de maple. Una combinación irresistible de texturas suaves</p>
-                    <p class="precio">$18.000 <span class="fs-1">cop</span></p>
-            </div>
-            <div class="botones">
-                <button class="editar" routerLink="/editar">Editar</button>
-                <button class="borrar" (click)="submit($event)" >Borrar</button>
-            </div>
-        </div>
-        <div class="producto">
-            <img loading="lazy" decoding="async" src="../../../../assets/img/productos/producto_5.jpg" alt="Imagen producto">
-            <div class="texto-producto">
-                <h3>Overnight Oats</h3>
-                <p>Disfruta de nuestra avena con frutas y yogur griego: una mezcla deliciosa y saludable de avena suave, yogur 
-                    cremoso y frutas frescas. Un desayuno nutritivo y lleno de sabor para empezar el día con energía</p>
-                    <p class="precio">$18.000 <span class="fs-1">cop</span></p>
-            </div>
-            <div class="botones">
-                <button class="editar" routerLink="/editar">Editar</button>
-                <button class="borrar" (click)="submit($event)" >Borrar</button>
-            </div>
-        </div>
-        <div class="producto">
-            <img  loading="lazy" decoding="async" src="../../../../assets/img/productos/producto_6.jpg" alt="Imagen producto">
-            <div class="texto-producto">
-                <h3>Cafe frio latte</h3>
-                <p>Prueba nuestro irresistible café Dalgona: una mezcla cremosa de café instantáneo,
-                     azúcar y agua, batida hasta obtener una espuma deliciosa. Una experiencia que combina el amargor del café con lo dulce.</p>
-                    <p class="precio">$18.000 <span class="fs-1">cop</span></p>
-            </div>
-            <div class="botones">
-                <button class="editar" routerLink="/editar">Editar</button>
-                <button class="borrar" (click)="submit($event)" >Borrar</button>
-            </div>
-        </div>
+  <div class="listado-productos">
+    <div class="producto" *ngFor="let producto of productos">
+      <img
+        loading="lazy"
+        decoding="async"
+        [src]="producto.img"
+        alt="Imagen producto"
+      />
+      <div class="texto-producto">
+        <h3>{{ producto.nombre }}</h3>
+        <p>
+          {{ producto.descripcion }}
+        </p>
+        <p class="precio">
+          {{ producto.precio | precioFormat }} <span class="fs-1">cop</span>
+        </p>
+      </div>
+      <div class="botones">
+        <button class="editar" (click)="irEditar(producto.id)">Editar</button>
+        <button class="borrar" (click)="borrarProducto(producto.id)">
+          Borrar
+        </button>
+      </div>
     </div>
-
+  </div>
 </main>

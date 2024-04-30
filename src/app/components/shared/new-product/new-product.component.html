@@ -1,15 +1,9 @@
-<header class="header header-inicio " >
+<header class="header header-inicio ">
     <div class="contenido-header contenedor">
-        
         <div class="barra">
-            
-            <div class="barra">
-                <button type="button" class="btn btn-lg btn-outline-light me-3 boton1"  routerLink="/admin" >Home</button>
-                <button type="button" class="btn btn-link boton2" routerLink="/home">Salir</button>
-            
-            </div> 
-        
-        </div>   
+            <button type="button" class="btn btn-lg btn-outline-light me-3 boton1"  routerLink="/admin" >Home</button>
+            <button type="button" class="btn btn-link boton2" routerLink="/home">Salir</button>
+        </div>
     </div>
 </header>
 
@@ -20,39 +14,36 @@
             <img class="mb-5"  loading="lazy" decoding="async"  src="../../../../assets/img/productos/producto_5.jpg" alt="Imagen producto">
         </div>
         <div class="edit-form ">
-            <div class="row align-items-center mb-3">
-                <div class="col-4 text-h">
-                  <label for="inputPassword6" class="col-form-label">Nombre:</label>
+            <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+                <div class="row align-items-center mb-3">
+                    <div class="col-4 text-h">
+                        <label for="nombre" class="col-form-label">Nombre:</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" id="nombre" formControlName="nombre" class="form-control" aria-describedby="nombreHelp" required>
+                    </div>
                 </div>
-                <div class="col-8">
-                  <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-                </div>
-            </div>
 
-            <div class="row align-items-center mb-3">
-                <div class="col-4 text-h">
-                    <label for="inputPassword6" class="col-form-label">Descripción: </label>
+                <div class="row align-items-center mb-3">
+                    <div class="col-4 text-h">
+                        <label for="descripcion" class="col-form-label">Descripción:</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" id="descripcion" formControlName="descripcion" class="form-control" aria-describedby="descripcionHelp" required>
+                    </div>
                 </div>
-                <div class="col-8">
-                    <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                <div class="row align-items-center">
+                    <div class="col-4 text-h">
+                        <label for="precio" class="col-form-label">Precio:</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="number" id="precio" formControlName="precio" class="form-control" aria-describedby="precioHelp" required>
+                    </div>
                 </div>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-4 text-h">
-                    <label for="inputPassword6" class="col-form-label">Precio: </label>
+                <div class="campo">
+                    <button type="submit" class="btn-enviar">Enviar</button>
                 </div>
-                <div class="col-8">
-                    <input type="number" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-                </div>
-            </div>
-            <div class="campo">
-                <input type="button" (click)="submit($event)" value="Enviar">
-            </div>
-
+            </form>
         </div>
-
-            
     </div>
-   
-
 </main>
